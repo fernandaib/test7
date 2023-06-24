@@ -1,0 +1,710 @@
+/*
+font-family: 'Alata', sans-serif;
+font-family: 'Montserrat', sans-serif;*/
+
+:root{
+    /* Colors */
+    --bgColor:#F5F5FA;
+    --blueLight:#009CD6;
+    --blueMedium:#0074BD;
+    --blueHard:#015BA1;
+    --accentColor: #F5A333;
+    --txtColor: #707070;
+    --grayColor: #DEDFE2;
+
+    /* Fonts */
+    --title: 'Alata', sans-serif;
+    --content: 'Montserrat', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+body{
+    background-color: var(--bgColor);
+    color: var(--txtColor);
+    font-family: var(--content);
+    font-weight: 500;
+    font-size: 1em;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;    
+}
+
+a{
+    text-decoration: none;
+}
+/* ----------------------------------------------------------------
+Navigation
+---------------------------------------------------------------- */
+.navigation{
+    padding: .5em 10vw;
+    box-shadow: 0 3px 10px var(--txtColor);
+    width: 100vw;
+    position: fixed;
+    background-color: var(--bgColor);
+    
+    top: 0;
+    left: 0;    
+    z-index: 100;
+}
+
+.navBar,
+.menuLogo,
+.logo{
+    display: none;
+}
+
+.mobileMenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;     
+    width: 100%;   
+}
+
+.mobileMenu a{
+    text-decoration: none;    
+
+}
+
+.mobileMenu a .nameOne{
+    color: var(--accentColor);
+}
+
+.mobileMenu a .nameTwo{
+    color: var(--blueHard);
+}
+
+.mobileLogoWhole{    
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    text-transform:uppercase;
+    gap: .5em;
+    font-family: var(--title);
+    font-size: clamp(.7rem, 1vw, .8rem);
+    font-weight: 800;        
+}
+
+.mobileLogo{
+    width: 15%;
+    height: auto;
+}
+
+.toggle-btn{
+    background-color: #FFF;
+    color: var(--blueLight);
+    border: none;
+    padding: .5em;
+    font-size: 1.5em;    
+}
+/* ..................................................................
+Java Script: Button Close - Open
+.................................................................. */
+.fa-bars{
+    display: block;
+}
+
+.fa-xmark{
+    display: none;
+}
+
+.switchOn{
+    display: block;
+}
+.switchOff{
+    display: none;
+}   
+
+.menuMobileStyle{
+    background-color: var(--bgColor);     
+    border-bottom: solid 1px var(--bgColor);   
+    animation: nav-load .6s ease-out;   
+    color: var(--txtColor);
+}
+
+nav.show{
+    background-color: var(--bgColor);    
+    height: 100vh;     
+    position: absolute;    
+    top: 100%;
+    width: 100%;
+    margin-left: -10vw;
+
+    text-align: center;   
+    display: flex;   
+    flex-direction: column;
+    justify-content:flex-start;    
+    font-size: clamp(1.5rem, 1.2vw, 1rem);
+    line-height: 3.5;    
+
+    animation: nav-load .6s ease-out;   
+}  
+
+nav.show ul{
+    margin-top: 15vh;    
+}
+
+
+
+@keyframes nav-load{
+    0%{        
+        background-color: rgba(245, 245, 250, .5);
+    }
+
+    100%{          
+        background-color: var(--bgColor);
+    }
+}
+
+/* """""""""""""""""""""""""""""""""
+    Links
+""""""""""""""""""""""""""""""" */
+
+nav.show .self-hover a{
+    color: var(--txtColor);
+}
+
+nav.show a{
+    color: var(--txtColor);
+    text-decoration: none;
+}
+
+nav.show a:hover{
+    color: var(--accentColor);
+    font-weight: 800;
+    
+}
+
+/* ----------------------------------------------------------------
+Hero
+---------------------------------------------------------------- */
+.hero{
+    background: url(../images/finance1000.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    margin-top: 3em;
+    box-shadow: 0 5px 3px rgba(112, 112, 112, .3);
+}
+
+.hero blockquote{
+    background-color: rgba(255, 255, 255, .9);
+    font-size: clamp(.8rem, 1.8vw, 1.5rem);  
+    font-weight: 500;
+    line-height: 1.5;
+    font-family: var(--title);
+    color: var(--txtColor);
+    
+    padding: 1em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    text-align: center;
+}
+
+.hero h1{
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: clamp(1rem, 1.8vw, 2rem); 
+    font-weight: 900;
+    line-height: 1;
+}
+
+.hero .nameOne{
+    color: var(--accentColor);
+}
+
+.hero .nameTwo{
+    color: var(--blueHard);
+}
+
+blockquote .btn-contact{
+    background-color: var(--accentColor);
+    border: none;
+    padding: .25em .5em;
+    font-family: var(--title);
+    font-size: clamp(1rem, 1.8vw, 1.5rem); 
+    color: hsl(206, 99%, 32%);
+    margin-top: 1em;
+    cursor: pointer;   
+}
+
+.btn-contact:hover{
+    background-color: var(--grayColor);
+    box-shadow: 3px 3px 0 var(--accentColor);
+    color: var(--blueHard);
+}
+/* ----------------------------------------------------------------
+Main - Index
+---------------------------------------------------------------- */
+.servicesCeja{
+    padding: 2em 10vw;
+}
+.servicesCeja h2{
+    font-family: var(--title);
+    font-weight: 800;
+    color: var(--blueHard);
+    text-transform: capitalize;
+    font-size: clamp(1rem, 1.8vw, 2rem);
+    border-bottom: solid 2px var(--accentColor);
+    padding-bottom: .5em;    
+}
+
+.services-containers{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;    
+}
+.service{
+    background-color: #FFF;    
+    box-shadow: 3px 3px 5px var(--grayColor);
+    border-radius: .5em;    
+    width: 220px;
+    height: 300px;
+    
+    text-align: center;
+    padding: 2em 1em .5em;    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.service img{
+    width: 200px;
+    height: auto; 
+}
+.service-txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    font-size: clamp(.8rem, 1.2vw, 1rem);
+    font-weight: 800;
+    border-top: solid 2px var(--blueLight);
+    padding-top: 1em;
+}
+
+.service-txt h3{
+    
+    text-transform: capitalize;
+    color: var(--blueMedium);
+    margin-bottom: 1em;
+    
+}
+.service-txt p a{
+    color: var(--accentColor);
+}
+.service-txt p a::after{    
+    content: '\f101';
+    display: inline-block;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;    
+    padding-left: .25em;
+}
+.card02 img.img02,
+.card05 img.img05,
+.card06 img.img06,
+.card08 img.img08{    
+    height: auto;
+    width: 150px;
+}
+
+/* ----------------------------------------------------------------
+Main - Nosotros
+---------------------------------------------------------------- */
+.main{
+    margin-top: 6em;
+    padding: 2em 15vw;   
+}
+
+.description,
+.main-contact{
+    max-width: 800px;
+}
+
+.description img,
+.description-contact img{    
+    padding-bottom: 1.5em; 
+    width: 50vw;
+    height: auto;  
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.description h2,
+.main-contact h2{
+    font-family: var(--title);
+    font-weight: 800;
+    color: var(--blueHard);
+    text-transform: capitalize;
+    font-size: clamp(1.5rem, 1.8vw, 2rem);
+    border-bottom: solid 2px var(--accentColor);
+    padding-bottom: .5em;    
+    margin-bottom: 2em;
+}
+
+.description p{
+    
+    line-height: 1.5;
+}
+
+
+.description p:first-of-type::first-letter{
+    font-weight: bold;
+    font-family:'Prata', serif;
+    font-size: 4.5rem;
+    color: var(--accentColor);
+    float: left;
+    line-height: .5;
+    padding: 1px 6px 0 0;
+}
+/* ----------------------------------------------------------------
+Main - Contact
+---------------------------------------------------------------- */
+.main-contact-page{
+    margin-top: 6em;
+    padding: 2em 10vw;   
+}
+
+.description-contact{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.description-contact ul{
+    line-height: 2.5; 
+    font-size: clamp(.7rem, 1vw, 1rem);    
+}
+
+.main-contact a{
+    color: var(--txtColor);   
+}
+
+.main-contact a:hover{
+    color: var(--accentColor);
+    font-weight: 800;
+}
+
+/* ----------------------------------------------------------------
+Whatsapp button action
+---------------------------------------------------------------- */
+.contact-ws-btn .fa-whatsapp{
+    background-color: var(--accentColor);
+    
+    color: var(--bgColor);
+    font-size: 2em;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    
+    bottom: 8em;
+    right: .5em;  
+}
+/* ----------------------------------------------------------------
+Footer
+---------------------------------------------------------------- */
+.footer{
+    margin-top: auto;
+    background-color: var(--blueMedium);
+    color: #FFF;
+    padding-top: 1.5em;
+}
+
+.business-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: clamp(1rem, 1vw, 1rem);    
+    line-height: 2;
+    
+}
+
+.footer-contact ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;   
+}
+
+.socialMedia ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: clamp(1rem, 1.2vw, 2rem);   
+     
+    gap: 1em;
+}
+
+.footer-contact h2,
+.socialMedia h2{    
+    text-align: center;
+    margin-top: 1em;
+    font-weight: 800;
+}
+
+.footer-contact .fa-solid,
+.footer-contact .fa-regular,
+.main-contact .fa-solid,
+.main-contact .fa-regular{
+    margin-right: 1em;
+}
+
+
+.copyRight{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.5;
+    font-size: clamp(.5rem, 1vw, .6rem);
+    margin-top: .5em;    
+    padding: 1em;    
+}
+
+
+
+/* """""""""""""""""""""""""""""""""
+    Links
+""""""""""""""""""""""""""""""" */
+.footer a{
+    color: var(--bgColor);
+    text-decoration: none;
+}
+
+.footer a:hover{
+    color: var(--accentColor);
+    font-weight: 800;
+}
+
+/* ============================================================================= 
+SCREEN MIN 800
+============================================================================= */
+@media screen and (min-width: 800px){
+/* ----------------------------------------------------------------
+Navigation
+---------------------------------------------------------------- */
+    .navigation{
+        padding: .25em 10vw;
+    }
+
+    .navigation .toggle-btn{
+        display: none;
+    }
+    .navBar{
+        display: block;
+    }
+    .navBar ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1em;
+    }
+
+    .navBar li:first-child{ 
+        margin-right: auto;
+    } 
+
+    .navBar a{
+        color: var(--txtColor);
+    }
+
+    .navBar a:hover{
+        color: var(--accentColor);
+        font-weight: 800;
+    }
+
+    .mobileMenu{
+        display: none;
+    }
+
+    .menuLogo{
+        display: block;
+        width: 15%;
+        height: auto;
+    }   
+ 
+    .logo{
+        display: flex;
+        flex-direction: row;
+        
+        align-items: center;
+        text-transform:uppercase;
+        gap: .5em;
+        font-family: var(--title);
+        font-size: clamp(.3rem, 1vw, .8rem);
+        font-weight: 800;   
+    }
+
+    .logo .nameOne{
+        color: var(--accentColor)
+    }
+    
+    .logo .nameTwo{
+        color: var(--blueHard)
+    }
+
+/* ..................................................................
+Java Script: Button Close - Open
+.................................................................. */
+    /* nav.show{
+        display: none;
+    }   */
+
+    /* .menuMobileStyle{
+        display: none;
+    } */
+
+/* ----------------------------------------------------------------
+Hero
+---------------------------------------------------------------- */
+    .hero{
+        background: url(../images/finance1000.jpg);
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: 5em;
+
+        height: 70vh;
+        align-items:end;
+        justify-content:end;        
+    }
+
+    .hero blockquote{
+        background-color: rgba(255, 255, 255, .8);
+        padding: 1.5em;
+        margin-right: 3em;
+        margin-bottom: 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+        width: 40vw;
+    }
+
+    blockquote .btn-contact{
+        margin-left: auto;
+    }
+
+    .hero h1{
+        letter-spacing: .2rem;
+    }
+
+/* ----------------------------------------------------------------
+Main - Index
+---------------------------------------------------------------- */
+    .servicesCeja{
+        padding: 2em 15vw;
+    }
+
+    .service{
+        width: 300px;
+        height: 300px;
+        padding: 2.5em 1.5em 1em;
+    }  
+
+/* ----------------------------------------------------------------
+Main - Nosotros
+---------------------------------------------------------------- */    
+    .description,
+    .main-contact{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .description img{
+        width: 40%;        
+        float: left;
+        padding-right: 1em;
+        padding-bottom: 1em;
+    }
+
+/* ----------------------------------------------------------------
+Main - Contact
+---------------------------------------------------------------- */
+
+    .description-contact img{
+        width: 50%;
+    }
+    .description-contact{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;  
+    }
+
+    .description-contact ul{
+        text-align: unset;
+    }
+
+/* ----------------------------------------------------------------
+Whatsapp button action
+---------------------------------------------------------------- */
+    .contact-ws-btn .fa-whatsapp{
+        bottom: 4em;
+        right: 10vw;
+    }
+
+/* ----------------------------------------------------------------
+Footer
+---------------------------------------------------------------- */
+    .business-info{
+        flex-direction: row;
+        gap: 20vw;
+    }
+
+    .footer-contact ul{
+        justify-content: center;
+        text-align: unset;
+    }
+    .footer-contact h2,
+    .socialMedia h2{
+        margin-bottom: 1em;
+    }
+}
+
+/* ============================================================================= 
+SCREEN MIN 1200
+============================================================================= */
+@media screen and (min-width: 1200px){
+/* ----------------------------------------------------------------
+Hero
+---------------------------------------------------------------- */
+    .hero{
+        background: url(../images/finance2000.jpg);
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }   
+
+    .navBar ul{
+        gap: 3em;
+    }
+    .services-containers{
+        justify-content: center;
+        
+    }
+    .service{
+        padding: 4em 1.5em 1em;
+        width: 350px;
+        height: 350px;
+    }
+        
+}
